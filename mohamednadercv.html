@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Nader Elkassas | Infrastructure &amp; Virtualization Support Engineer</title>
+<meta name="description" content="Senior technical support engineer with AIX, Linux, networking (CCNA/CCNP), Docker and AWS/Azure experience. Former IBM technical support professional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef2f6;
+    --panel: #ffffff;
+    --ink: #13233a;
+    --muted: #55657a;
+    --line: #cfd8e3;
+    --accent: #0b6e8a;
+    --accent-soft: #d9eef4;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1a2a;
+      --panel: #162338;
+      --ink: #e6edf5;
+      --muted: #9fb0c4;
+      --line: #2a3b54;
+      --accent: #5cc4de;
+      --accent-soft: #17364a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  h1, h2, h3 { font-family: var(--sans); line-height: 1.2; margin: 0; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
+  /* Identity column */
+  aside { position: sticky; top: 2rem; align-self: start; }
+  h1 { font-size: 2.35rem; font-weight: 700; letter-spacing: -0.02em; }
+  .role { font-family: var(--sans); font-size: 1.05rem; color: var(--accent); font-weight: 500; margin: .75rem 0 1.5rem; }
+  .facts { list-style: none; padding: 0; margin: 0 0 1.75rem; font-family: var(--sans); font-size: .95rem; }
+  .facts li { padding: .55rem 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; }
+  .facts li:last-child { border-bottom: 1px solid var(--line); }
+  .facts span:first-child { color: var(--muted); }
+  .facts a { word-break: break-all; text-align: right; }
+  .counter { font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+  .counter strong { color: var(--ink); font-weight: 600; }
+
+  /* Sections */
+  section { margin-bottom: 3rem; }
+  h2 { font-size: 1.3rem; font-weight: 600; padding-bottom: .6rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--ink); }
+  .summary { font-size: 1.15rem; line-height: 1.7; margin: 0; }
+
+  /* Experience: a route of nodes, because this career really is a sequence */
+  .route { list-style: none; margin: 0; padding: 0 0 0 1.6rem; position: relative; }
+  .route::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .route > li { position: relative; padding-bottom: 2rem; }
+  .route > li:last-child { padding-bottom: 0; }
+  .route > li::before {
+    content: ""; position: absolute; left: -1.6rem; top: .45rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--accent);
+  }
+  .route > li.current::before { background: var(--accent); }
+  .job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .25rem 1rem; align-items: baseline; }
+  h3 { font-size: 1.1rem; font-weight: 600; }
+  .when { font-family: var(--sans); font-size: .9rem; color: var(--muted); white-space: nowrap; }
+  .org { font-family: var(--sans); color: var(--accent); font-weight: 500; margin: .1rem 0 .6rem; }
+  .route ul { margin: 0; padding-left: 1.1rem; }
+  .route ul li { margin-bottom: .35rem; }
+
+  /* Skills + certs */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem 2rem; }
+  .skills h3 { font-size: .95rem; color: var(--muted); font-weight: 500; margin-bottom: .5rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: 0; }
+  .tags li { font-family: var(--sans); font-size: .875rem; background: var(--accent-soft); color: var(--ink); padding: .2rem .65rem; border-radius: 4px; }
+
+  .certs { list-style: none; margin: 0; padding: 0; font-family: var(--sans); }
+  .certs li { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+  .certs li:first-child { border-top: 1px solid var(--line); }
+  .certs small { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+  .certs b { font-weight: 600; }
+
+  .edu p { margin: .15rem 0; }
+  footer { font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+
+  @media (max-width: 820px) {
+    .wrap { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+    aside { position: static; }
+    h1 { font-size: 2rem; }
+  }
+  @media print { aside { position: static; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside>
+    <h1>Mohamed Nader Elkassas</h1>
+    <p class="role">Senior Technical Support Engineer, Infrastructure &amp; Virtualization</p>
+    <ul class="facts">
+      <li><span>Based in</span><span>Cairo, Egypt</span></li>
+      <li><span>Email</span><a href="mailto:mhmdnader2497@gmail.com">mhmdnader2497@gmail.com</a></li>
+      <!-- Replace the URL below with your real LinkedIn profile -->
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/YOUR-PROFILE" rel="noopener">Profile</a></li>
+      <li><span>Languages</span><span>English, Italian, Spanish</span></li>
+    </ul>
+    <p class="counter" id="counter" hidden>Visitors: <strong id="count">...</strong></p>
+  </aside>
+
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">Enterprise IT infrastructure and systems administrator with a background in enterprise support, networking, Linux/Unix administration, virtualization and cloud. I spent four years at IBM supporting AIX virtual network infrastructure, and I now build on AWS and Azure, with Docker for containers.</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <ol class="route">
+        <li class="current">
+          <div class="job-head"><h3>L3 Technical Support Engineer</h3><span class="when">Mar 2026 to Jun 2026</span></div>
+          <p class="org">CME</p>
+          <ul>
+            <li>Resolved escalated support tickets with accurate solutions, improving customer satisfaction.</li>
+            <li>Implemented technical fixes for customer issues.</li>
+            <li>Documented issues and solutions to keep accurate logs.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="job-head"><h3>Technical Support Professional</h3><span class="when">Apr 2022 to Mar 2026</span></div>
+          <p class="org">IBM</p>
+          <ul>
+            <li>Supported AIX virtual network infrastructure in enterprise virtualized environments.</li>
+            <li>Analyzed and resolved AIX incidents from both networking and systems perspectives.</li>
+            <li>Worked with customers through tickets, email and online meetings to resolve high-priority issues.</li>
+            <li>Ran root cause analysis and wrote documentation for recurring issues.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="job-head"><h3>Technical Support Engineer, Level 1</h3><span class="when">Jun 2021 to Apr 2022</span></div>
+          <p class="org">Orange Business Services</p>
+          <ul>
+            <li>Provided first-line support for networking and security services.</li>
+            <li>Managed customer incidents and documented solutions on the Oceane platform.</li>
+            <li>Gained hands-on experience with SD-WAN, log troubleshooting and configuration management.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Operating systems</h3><ul class="tags"><li>AIX</li><li>Unix</li><li>Linux</li></ul></div>
+        <div><h3>Networking</h3><ul class="tags"><li>CCNA</li><li>CCNP (course)</li><li>SD-WAN</li></ul></div>
+        <div><h3>Cloud and virtualization</h3><ul class="tags"><li>AWS</li><li>Azure</li><li>Docker</li><li>Virtualization</li></ul></div>
+        <div><h3>Scripting and tools</h3><ul class="tags"><li>Python</li><li>Bash</li><li>Ticketing systems</li></ul></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul class="certs">
+        <li><span><b>Microsoft Azure Fundamentals (AZ-900)</b>, Microsoft</span><small>Aug 2026</small></li>
+        <li><span><b>AWS Cloud Practitioner</b>, AWS</span><small>Mar 2025</small></li>
+        <li><span><b>CCNP course</b></span><small>Jan 2025</small></li>
+        <li><span><b>IBM Storage and Cloud Essentials</b>, IBM</span><small>Sep 2023</small></li>
+        <li><span><b>Docker Essentials</b>, IBM</span><small>Sep 2023</small></li>
+        <li><span><b>AIX Systems Administrator</b>, IBM</span><small>May 2023</small></li>
+        <li><span><b>CCNA</b>, Cisco</span><small>Apr 2021</small></li>
+        <li><span><b>Introduction to Cybersecurity</b>, Cisco</span><small>Apr 2021</small></li>
+      </ul>
+    </section>
+
+    <section class="edu">
+      <h2>Education</h2>
+      <p><strong>B.Sc. Electronics and Communication Engineering</strong></p>
+      <p>Misr International University, 2014 to 2019</p>
+    </section>
+
+    <footer>
+      Hosted on AWS: S3, CloudFront, API Gateway, Lambda and DynamoDB.
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Set this to your API Gateway URL once the visitor counter is deployed.
+  // While it is empty, the visitor counter stays hidden.
+  const API_URL = "https://y69vbzezhl.execute-api.eu-north-1.amazonaws.com";
+
+  if (API_URL) {
+    fetch(API_URL)
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById("count").textContent = d.count;
+        document.getElementById("counter").hidden = false;
+      })
+      .catch(() => {});
+  }
+</script>
+</body>
+</html>
